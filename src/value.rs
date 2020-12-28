@@ -33,7 +33,7 @@ impl Serialize for Value {
             Value::Object(o) => {
                 let mut map = serializer.serialize_map(Some(o.len()))?;
                 for (k, v) in o {
-                    map.serialize_entry(k, v)?;
+                    map.serialize_entry(&String::from_utf8_lossy(k), v)?;
                 }
                 map.end()
             }

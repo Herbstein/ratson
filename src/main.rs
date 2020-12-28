@@ -16,8 +16,8 @@ arg_enum! {
 struct Opt {
     #[structopt(name = "INPUT")]
     input: PathBuf,
-    #[structopt(possible_values = &Output::variants(), case_insensitive = true)]
-    output: Option<Output>,
+    // #[structopt(possible_values = &Output::variants(), case_insensitive = true)]
+    // output: Option<Output>,
 }
 
 fn main() {
